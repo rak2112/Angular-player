@@ -1,0 +1,48 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" xmlns:ng="http://angularjs.org" lang="en"> <!--<![endif]-->
+
+<head>
+  <meta charset="UTF-8">
+  <title>Angular Player</title>
+  <style type="text/css">
+    [ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak{display:none !important;}ng\:form{display:block;}
+  </style>
+<!-- <base href="/angularplayer/"> -->
+  <meta name="description" content="audio playlist in angular, Music player in angularjs">
+  <meta name="author" content="Khurram Raja">
+  <link rel="shortcut icon" href="../img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5 maximum-scale=1.0">
+  <link rel="stylesheet" href="/css/styles.min.css">
+</head>
+<body id="ng-app" ng-app="angPlayer" class="ng-cloak">
+  <div id="main">
+    <h2>Audio playlist with AngularJS</h2>
+
+    <div id="playerAudio" class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+      <div id="songsCollection" ng-controller="playListController">
+        <div class="menu" show-hide>
+          <a ng-href='#/' id='gotoHome'><i class="glyphicon glyphicon-home"></i> All Albums </a>
+          <a href='' id='playAll' ng-click="playAll()"> <i class="glyphicon glyphicon-play"></i> Play All</a>
+          <a href='' id='removeAll' ng-click="removeAll()"> <i class="glyphicon glyphicon-trash"></i> Remove All</a>
+        </div>
+        <audio id='player' autoplay='true' controls src="" type="audio/mpeg"></audio>
+        <ul>
+          <li ng-repeat="song in songs" ng-class="{selected:player == $index}" ng-click="playSong($index)">
+            <a class='song' href=''><img src="/images/{{song.image}}"/> <span><i class="glyphicon glyphicon-music"></i></span>{{song.title}}</a> <a href='' ng-click="removeSong($index)" id='remove'><i class="glyphicon glyphicon-remove"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  <div class="col-xs-12 col-sm-6 col-md-8 col-lg-8 view-item" ng-view></div> 
+  </div>
+
+
+  <script src="/js/vendors.min.js"></script>
+  <script src="/js/main.js"></script>
+
+</body>
+</html>

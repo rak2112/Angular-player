@@ -1,0 +1,87 @@
+@media (max-width: 1024px){
+  #albumView{
+    .note{
+      padding:15px 5px;
+      width:100%;
+      margin:0 0 20px 0px;
+      font-size:12px;    
+      $downArrow:"\f0dd";
+    @include arrDown($downArrow, #000, 70px, -10px, 70%);
+    }
+  }
+}
+
+@media (max-width: 767px){
+  .prod-list .plan{
+    margin:20px auto;
+    width:90%;
+  }
+  #albumRecords, #albumView{
+        width:100%;
+  }
+  #playerAudio{
+    width:100%;
+  }
+  audio{
+      margin:0 0 20px 0px;
+  }
+  #player{
+    width:100%;
+  }
+  
+}
+@media (min-width:320px) and (max-width:768px){
+  #albumList{
+    margin:0;
+    padding:0;
+    margin-bottom:15px;
+    .plan{
+      width:100%;
+      img{
+      width:auto;
+      }
+    }
+  } 
+  #songsList{
+     margin:0;
+    padding:0;
+    margin-bottom:15px;
+    .plan{
+      width:100%;
+      img{
+      width:auto;
+      }
+    }
+  } 
+  #songsCollection{
+    img{
+      margin-right:15px; 
+    }
+    .menu{
+      margin:20px 0;
+      top:0;
+      text-align:left;
+      a{
+        display:block;
+        margin:10px 10px 0 0;
+      }
+    }
+    a#remove{
+      padding-right:8px;
+    }
+  }
+  #songsList{
+    margin:20px;
+    .plan{
+      width:100%;
+    }
+  }
+    // #songsCollection .menu{margin:20px 0;top:0;text-align:left;}
+    // // #songsCollection .menu a{display:block;margin:10px 10px 0 0;}
+    // #songsCollection ul li img{margin-right:15px;}
+    // #songsCollection ul li .glyphicon-music{margin-right:5px;}
+    // #songsCollection a#remove{padding-right:8px;}
+    // #songsList{margin:20px;}
+    // #songsList .plan{width:100%;}
+    // #songsCollection ul li span{background-position:89px 86%;}
+}

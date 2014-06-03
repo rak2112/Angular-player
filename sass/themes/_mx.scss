@@ -1,0 +1,69 @@
+//
+// MX Theme specific styles
+//
+// Home page
+// --------------------------------------------------
+
+.logo {
+	background: url(/racing/_assets/presentation/mx-logo.png) no-repeat 0 0;
+}
+
+.main {
+	background: url(/racing/_assets/presentation/mx-bg.jpg) no-repeat center 0;
+}
+
+.intro {
+	background: url(/racing/_assets/images/mx_home_hero.png) no-repeat 62px 62px;
+}
+
+//-----------------------------------------
+// News
+// ----------------------------------------
+
+
+
+//-----------------------------------------
+// Race & Results
+// ----------------------------------------
+
+
+
+//-----------------------------------------
+// Bikes
+// ----------------------------------------
+
+.themachines {
+	dt {
+		text-transform: capitalize;
+		font-weight: normal;
+	}
+	dt,
+	dd {
+		@include rem("font-size", 14);
+	}
+	article {
+	  &:nth-child(1) {
+		  border-right: 1px solid $mid-grey;
+			width: 441px;
+	  }
+	  &:nth-child(2) {
+			@include rem("padding", 0, 0, 0, $panel-body-padding);
+			width: 423px;
+	  }
+	}
+}
+.race-edition  {
+	img {
+		@include abs-pos(auto, auto, auto, 25px);
+	}
+}
+
+//-----------------------------------------
+// Team
+// ----------------------------------------
+
+
+
+//-----------------------------------------
+// Gallery
+// ----------------------------------------

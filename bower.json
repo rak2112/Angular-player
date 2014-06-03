@@ -1,0 +1,10 @@
+{
+  "name": "albums Backbone",
+  "version": "0.0.1",
+   "dependencies": {
+    "jquery": null,
+    "underscore-amd": null,
+    "backbone-amd": null,
+    "requirejs":null
+   }
+}

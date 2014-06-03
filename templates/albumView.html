@@ -1,0 +1,14 @@
+<div class="row" style='position:relative;'>
+<ul id='songsList' class='thumbnails unstyled'>
+<li id="song{{song.pid}}" data-spid ="{{song.pid}}" class='cat plan' ng-repeat="song in subalbum" ng-click="songClicked(song.pid)">
+<img src = "/images/{{song.image}}"/>
+<div class="plan-name-bronze">
+<h2>{{song.title}}</h2>         
+<p>{{song.artist}}</p>
+<p>{{song.album}}-{{song.year}}</p>
+</div>
+
+</li>
+</ul>
+</div>
+    

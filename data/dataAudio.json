@@ -1,0 +1,254 @@
+{ 
+    "records": [
+    {
+        "title": "Classic Pop",
+        "artist": "Michael Jackson",
+        "image": "1.jpg",
+        "years": "1975-2010",
+        "pid" : 0,
+        "id" : 5,
+        "url": "http://www.amazon.com/",
+        "subalbum": [
+            {
+                "title": "Michael",
+                "artist": "Michael Jackson",
+                "image": "michael_small.jpg",
+                "large_image": "images/michael_large.jpg",
+                "year": 1988,
+                "pid": 0,
+                "media": "songs/mj1.mp3",
+                "album": "Michael" 
+            },
+            {
+                "title": "This Is It",
+                "artist": "Michael Jackson",
+                "image": "thisisit_small.jpg",
+                "large_image": "images/thisisit_large.jpg",
+                "year": 1987,
+                "pid": 1,
+                "media": "songs/mj2.mp3",
+                "album": "Bad" 
+            },
+            {
+                "title": "Dangerous",
+                "artist": "Michael Jackson",
+                "image": "dangerous_small.jpg",
+                "large_image": "images/dangerous_large.jpg",
+                "year": 1974,
+                "pid": 2,
+                "media": "songs/mj3.mp3",
+                "album": "Michael" 
+            },
+            {
+                "title": "Beat it",
+                "artist": "Michael Jackson",
+                "image": "essentialmj_small.jpg",
+                "large_image": "images/essentialmj_large.jpg",
+                "year": 1980,
+                "pid": 3,
+                "media": "songs/mj5.mp3",
+                "album": "Michael" 
+            },
+            {
+                "title": "Smooth criminal",
+                "artist": "Michael Jackson",
+                "image": "michael_small.jpg",
+                "large_image": "images/essentialmj_large.jpg",
+                "year": 1987,
+                "pid": 4,
+                "media":"songs/mj5.mp3",
+                "album": "Bad" 
+            } 
+        ] 
+    },
+    {
+        "title": "Modern Pop/R&B",
+        "artist": "Bruno Mars and Others",
+        "image": "gernade.jpg",
+        "years": "1999-2011",
+        "pid" : 1,
+        "url": "http://www.amazon.com/",
+        "subalbum": [
+            {
+                "title": "Gernade",
+                "artist": "Bruno Mars",
+                "image": "gernade.jpg",
+                "large_image": "images/gernade.jpg",
+                "year": 2010,
+                "pid": 5,
+                "media":"songs/gernade.mp3",
+                "url": "http://www.amazon.com/" 
+            },
+            {
+                "title": "Rolling in the Deep",
+                "artist": "Adele",
+                "image": "adele.jpg",
+                "large_image": "images/adele.jpg",
+                "year": 2011,
+                "pid": 6,
+                "media":"songs/adele.mp3",
+                "url": "http://www.amazon.co.uk/" 
+            },
+            {
+                "title": "Crazy for you",
+                "artist": "Cee Lo Green",
+                "image": "crazyCeeLo.jpg",
+                "large_image": "images/crazyCeeLo.jpg",
+                "year": 2009,
+                "pid": 7,
+                "media":"songs/crazy.mp3",
+                "url": "http://www.amazon.co.uk/" 
+            },
+            {
+                "title": "Man Down",
+                "artist": "Rihanna",
+                "image": "manDown.jpg",
+                "large_image": "images/manDown.jpg",
+                "year": 2010,
+                "pid": 8,
+                "media":"songs/manDown.mp3",
+                "url": "http://www.amazon.com/" 
+            },
+            {
+                "title": "No Reason",
+                "artist": "Pink",
+                "image": "pinkReason.jpg",
+                "large_image": "images/pinkReason.jpg",
+                "year": 2011,
+                "pid": 9,
+                "media":"songs/noReason.mp3",
+                "url": "http://www.amazon.com/" 
+            },
+            {
+                "title": "No Boys Allowed",
+                "artist": "Keri Hilson",
+                "image": "noBoysAloud.jpg",
+                "large_image": "images/noBoysAloud.jpg",
+                "year": 2012,
+                "pid": 10,
+                "media":"songs/noBoys.mp3",
+                "url": "http://www.amazon.co.uk/" 
+            } 
+        ] 
+    },
+    {
+        "title": "Justin Timberlake",
+        "artist": "Justin Timberlake",
+        "image": "timberlakeMain.jpg",
+        "years": "2000-2012",
+        "pid" : 2,
+        "url": "http://www.amazon.com/",
+        "subalbum": [
+            {
+                "title": "Cry me a River",
+                "artist": "Justin timberlake",
+                "image": "cryRiver.jpg",
+                "large_image": "images/taio_large.jpg",
+                "year": 2009,
+                "pid": 11,
+                "media": "songs/cryRiver.mp3" 
+            },
+            {
+                "title": "carry Out",
+                "artist": "Justin Timberlake and Timberland",
+                "image": "carryOut.jpg",
+                "large_image": "images/owlcity_large.jpg",
+                "year": 2011,
+                "pid": 12,
+                "media": "songs/carryOut.mp3" 
+            },
+            {
+                "title": "Give it to Me",
+                "artist": "Justin Timberlake, Nelly, Timberland",
+                "image": "giveMe.jpg",
+                "large_image": "images/love_large.jpg",
+                "year": 2004,
+                "pid": 13,
+                "media": "songs/giveMe.mp3" 
+            },
+            {
+                "title": "What Goes Around",
+                "artist": "Timberlake",
+                "image": "whatGoes.jpg",
+                "large_image": "images/blackeyedpeas_large.jpg",
+                "year": 2009,
+                "pid": 14,
+                "media": "songs/whatGoes.mp3" 
+            },
+            {
+                "title": "Morning After Dark",
+                "artist": "Justin Timberlake",
+                "image": "morningDark.jpg",
+                "large_image": "images/letitbe_large.jpg",
+                "year": 2008,
+                "pid": 15,
+                "media": "songs/morningDark.mp3" 
+            } 
+        ] 
+    },
+    {
+        "title": "R&B",
+        "artist": "Random Artists",
+        "image": "rnb.jpg",
+        "years": "2000-2011",
+        "pid" : 3,
+        "url": "http://www.amazon.com/",
+        "subalbum": [
+            {
+                "title": "Loose Yourself",
+                "artist": "Eminem",
+                "image": "eminem.jpg",
+                "large_image": "images/thescript_large.jpg",
+                "year": 2000,
+                "pid": 16,
+                "media": "songs/eminem.mp3" 
+            },
+            {
+                "title": "Ain't no Sunshine",
+                "artist": "Bill Whethers",
+                "image": "noSun.jpg",
+                "large_image": "images/socialnetwork_large.jpg",
+                "year": 1970,
+                "pid": 17,
+                "media": "songs/noSun.mp3" 
+            },
+            {
+                "title": "In Da Club",
+                "artist": "50 Cents",
+                "image": "inClub.jpg",
+                "large_image": "images/decembrists_large.jpg",
+                "year": 1998,
+                "pid": 18,
+                "media": "songs/inClub.mp3" 
+            },
+            {
+                "title": "HeartBeat",
+                "artist": "Enrique and Nichole",
+                "image": "heartBeat.jpg",
+                "large_image": "images/avenged_large.jpg",
+                "year": 2012,
+                "pid": 19,
+                "media": "songs/heartBeat.mp3" 
+            } 
+        ] 
+    },
+    {
+        "title": "More Coming Soon",
+        "artist": "Random Artists",
+        "image": "comingSoon.jpg",
+        "years": "TBA",
+        "pid" : 4,
+        "url": "http://www.amazon.com/",
+        "subalbum": [
+            {
+                "title": "More Coming Soon",
+                "artist": "Coming Soon",
+                "image": "comingSoon.jpg",
+                "large_image": "images/thescript_large.jpg",
+                "year": "Mix",
+                "pid": 20,
+                "media": "noMedia" 
+            }
+        ]    
+    }
+]}

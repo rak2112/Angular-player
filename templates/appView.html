@@ -1,0 +1,15 @@
+<div id="albumView">
+  <div class="note" show-hide>Select an album to add songs in playlist.</div>
+  <div class='prod-list'>
+  <ul id='albumList' class='thumbnails unstyled'>
+    <li id="album{{album.pid}}" data-pid ="{{album.pid}}" class='cat plan' ng-repeat="album in albums" ng-click="aClicked(album.pid)">
+      <img src = "/images/{{album.image}}"/>
+      <div class="plan-name-bronze">
+        <h2>{{album.artist}}</h2>
+        <h3>{{album.title}}</h3>
+        <p>{{album.years}}</p>
+      </div>
+    </li>
+  </ul>
+  </div>
+</div>  

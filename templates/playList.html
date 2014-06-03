@@ -1,0 +1,15 @@
+ <audio id='player' autoplay='true' controls preload='none' src="" type="audio/mpeg">
+      </audio>
+      
+      <div id="songsCollection" ng-controller="playListController">
+        <div class="menu" ng-hide="isVisible()">
+          <a ng-href='#/' id='gotoHome'><i class="glyphicon glyphicon-home"></i> All Albums </a>
+          <a href='' id='playAll' ng-click="playAll()"> <i class="glyphicon glyphicon-play"></i> Play All</a>
+          <a href='' id='removeAll' ng-click="removeAll()"> <i class="glyphicon glyphicon-trash"></i> Remove All</a>
+        </div>
+          <ul>
+            <li ng-repeat="song in songs" ng-class="{selected:player == $index}" ng-click="playSong($index)">
+              <a class='song' href=''><img src="/images/{{song.image}}"/> <span><i class="glyphicon glyphicon-music"></i></span>{{song.title}}</a> <a href='' ng-click="removeSong($index)" id='remove'><i class="glyphicon glyphicon-remove"></i></a>
+            </li>
+          </ul>
+      </div>

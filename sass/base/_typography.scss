@@ -1,0 +1,108 @@
+// h1, h2, h3, h4, h5, h6,
+// .h1, .h2, .h3, .h4, .h5, .h6 {
+//   font-family: $font-family-sans-serif;
+//   font-weight: $headings-font-weight-bold;
+//   line-height: $headings-line-height;
+//   text-transform: uppercase;
+//   height: auto;
+//   text-align: center;
+// }
+
+// h1, h2,
+// .h1, .h2 {
+//   font-family: $headings-font-family;
+// }
+
+// h1, .h1 { font-size: $font-size-h1; }
+// h2, .h2 { font-size: $font-size-h2; }
+// h3, .h3 { font-size: $font-size-h3; }
+// h4, .h4 { font-size: $font-size-h4; }
+// h5, .h5 { font-size: $font-size-h5; }
+// h6, .h6 { font-size: $font-size-h6; text-transform: inherit; }
+
+// #portalLogo {
+//   text-align: center;
+// }
+// // Body text
+// // -------------------------
+
+// p {
+//   margin: 0 0 ($line-height-computed / 2);
+//   @include rem("font-size", 16);
+//   text-align: center;
+// }
+// .subhead {
+//   @include rem("font-size", 15.5);
+// }
+
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Alegreya Sans', sans-serif;
+}
+ // h1{font-size:3.4em;}
+ //    h3{font-size:2.4em;}
+// Lists
+// --------------------------------------------------
+
+// Unordered and Ordered lists
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: ($line-height-computed / 2);
+  li {
+    list-style: none;
+  text-align: left;
+  }
+  ul,
+  ol {
+    margin-bottom: 0;
+  }
+}
+
+
+// Description Lists
+dl {
+  margin-top: 0; // Remove browser default
+  margin-bottom: $line-height-computed;
+  overflow: hidden;
+}
+dt,
+dd {
+  line-height: $line-height-base;
+  text-align: left;
+}
+dt {
+  float: left;
+  clear: left;
+  font-weight: bold;
+  @include rem("margin", auto, 12, auto, auto);
+}
+dd {
+  margin-left: 0; // Undo browser default
+}
+
+
+// Tables
+// --------------------------------------------------
+
+td,
+th {
+  color: $text-color;
+  text-align: left;
+  text-align: left;
+}
+caption {
+	@include linkTextOffscreen();
+}
+
+
+// Anchor
+// --------------------------------------------------
+a {
+  text-decoration: none;
+  text-align: left;
+  &:hover{text-decoration:none;}
+}
+a,a:active, a:selected, a:visited { 
+    border: none;
+    outline: none;
+}
