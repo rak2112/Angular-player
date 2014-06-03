@@ -1,7 +1,7 @@
 Angular-Player
 ============
 
-POS-Backbone is an SPA. It allows users to select products ranging from differet categories, adding, deleting items in the cart with their quantity and prices providing the full cash payment transactions.
+Angular-Player is a web based SPA. It allows users to select different albums and then add/remove songs from the playlist in HTML5 default audio player.
 
 Here are the list of Open source frameworks and tooling I have used.
 
@@ -13,7 +13,7 @@ Here are the list of Open source frameworks and tooling I have used.
 - Unit Test (jasmine/Karma)
 
 <h3>Demo</h3>
-View [Demo](http://www.khurramraja.me.uk/pointofsales/)
+View [Demo](http://www.khurramraja.me.uk/angularPlayer/)
 
 ## Support
 For support and question please contact at [raja.khurram20@gmail.com](mailto:raja.khurram20@gmail.com/)  or follow at [@raja_khurram21](https://twitter.com/raja_khurram21)
