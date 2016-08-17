@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* TRANSITION */
 a, a:hover, a:active, a:focus, a:visited {
   outline: 0 !important;
@@ -75,7 +76,7 @@ dd {
 
 td,
 th {
-  color: black;
+  color: #000;
   text-align: left;
   text-align: left;
 }
@@ -116,7 +117,6 @@ a, a:active, a:selected, a:visited {
   font-weight: normal;
   font-style: normal;
 }
-
 .fa {
   display: inline-block;
   font-family: FontAwesome;
@@ -178,35 +178,35 @@ a, a:active, a:selected, a:visited {
 /* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
    readers do not read off random characters that represent icons */
 .fa-twitter-square:before {
-  content: "\f081";
+  content: "";
 }
 
 .fa-facebook-square:before {
-  content: "\f082";
+  content: "";
 }
 
 .fa-twitter:before {
-  content: "\f099";
+  content: "";
 }
 
 .fa-facebook:before {
-  content: "\f09a";
+  content: "";
 }
 
 .fa-caret-down:before {
-  content: "\f0d7";
+  content: "";
 }
 
 .fa-caret-up:before {
-  content: "\f0d8";
+  content: "";
 }
 
 .fa-caret-left:before {
-  content: "\f0d9";
+  content: "";
 }
 
 .fa-caret-right:before {
-  content: "\f0da";
+  content: "";
 }
 
 #albumList li img, #songsList li img {
@@ -312,12 +312,12 @@ a, a:active, a:selected, a:visited {
   border-radius: 5px;
 }
 #albumView .note:before {
-  content: "\f0dd";
+  content: "";
   font-family: FontAwesome;
   font-style: normal;
   font-weight: normal;
   text-decoration: inherit;
-  color: black;
+  color: #000;
   font-size: 70px;
   padding-right: 0.5em;
   position: absolute;
@@ -415,12 +415,12 @@ a, a:active, a:selected, a:visited {
     font-size: 12px;
   }
   #albumView .note:before {
-    content: "\f0dd";
+    content: "";
     font-family: FontAwesome;
     font-style: normal;
     font-weight: normal;
     text-decoration: inherit;
-    color: black;
+    color: #000;
     font-size: 70px;
     padding-right: 0.5em;
     position: absolute;
@@ -514,3 +514,5 @@ a, a:active, a:selected, a:visited {
 .view-item.ng-enter.ng-enter-active {
   left: 0;
 }
+
+/*# sourceMappingURL=styles.css.map */

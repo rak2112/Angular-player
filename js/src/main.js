@@ -50,8 +50,15 @@ angPlayer.directive('showHide', ['$routeParams',  function($routeParams){
 }]);
 
 	//angular.module('kServices', ['ngResource'])
-angPlayer.factory('dataSource', function($resource) {
-	return $resource('/data/dataAudio.json');
+angPlayer.factory('dataSource', function($http) {
+	return {
+		getData: function() {
+			return $http({
+				url: '/data/dataAudio.json',
+				method: 'GET'
+			});
+		}
+	};
 });
 angPlayer.factory('dataProcessor', function($resource, dataSource, audio, $rootScope, $filter) {
 	// audio.addEventListener('ended', function() {
@@ -128,25 +135,15 @@ angPlayer.factory('dataProcessor', function($resource, dataSource, audio, $rootS
 	};
 });
 angPlayer.factory('audio', function() {
-			//var audio = angular.element('#player')[0];
 			var audio = document.getElementById('player');
 			return audio;
 		});
 
 angPlayer.controller('mainController', ['$scope', 'dataSource', '$location',
 	function($scope, dataSource, $location) {
-		// dataSource.get(function(data, status) {
-		// console.log('data', status());
-		// $scope.albums = data.records;
-		// });
-		dataSource.get().$promise.then(
-			function(data){
-				$scope.albums = data.records;
-			},
-			function(error){
-				console.log('error',error.status);
-			}
-		);
+		dataSource.getData().then(function(res) {
+				$scope.albums = res.data.records;
+			});
 
 		$scope.aClicked = function(id) {
 			var hash = '/album/' + id;
@@ -158,8 +155,8 @@ angPlayer.controller('mainController', ['$scope', 'dataSource', '$location',
 angPlayer.controller('albumController', ['$scope', 'dataSource', '$filter', '$routeParams', '$rootScope',
 	function($scope, dataSource, $filter, $routeParams, $rootScope) {
 		var album,albums,clickedAlbum;
-		dataSource.get(function(data) {
-			albums = data.records;
+		dataSource.getData().then(function(res) {
+			albums = res.data.records;
 			clickedAlbum = $filter('filter')(albums, {
 				pid: $routeParams.albumId
 			});
@@ -187,9 +184,9 @@ angPlayer.controller('playListController', ['$scope', 'dataSource', 'dataProcess
 
 		$scope.playAll = function() {
 			var album;
-			dataSource.get(function(data) {
+			dataSource.getData().then(function(res) {
 				//console.log('data', data.records);
-				var albums = data.records;
+				var albums = res.data.records;
 				if($routeParams.albumId){
 					var clickedAlbum = $filter('filter')(albums, {
 						pid: $routeParams.albumId
@@ -197,7 +194,6 @@ angPlayer.controller('playListController', ['$scope', 'dataSource', 'dataProcess
 					album = clickedAlbum[0].subalbum;
 					$scope.songs = dataProcessor.playAll(album);
 				}
-				
 			});
 		};
 		$scope.removeAll = function(){
