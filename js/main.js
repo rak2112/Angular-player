@@ -2,7 +2,6 @@
 var angPlayer = angular.module('angPlayer', ['ngRoute', 'ngResource', 'ngAnimate']);
 angPlayer.config(['$routeProvider', '$locationProvider',
 function($routeProvider) {
-	//$locationProvider.baseHref = "/angularplayer/";
 	$routeProvider.
 	when('/', {
 		templateUrl: '/templates/appView.html',
@@ -18,19 +17,6 @@ function($routeProvider) {
 }
 ]);
 
-angPlayer.directive('audioPlayer', ['dataProcessor', '$rootScope', function(dataProcessor, $rootScope){
-	return{
-		restrict:'A',
-		link: function(){
-			var audio = document.getElementById('player');
-			audio.addEventListener('ended', function() {
-				dataProcessor.current++;
-				dataProcessor.playNext();
-				$rootScope.$apply();
-			}, false);
-		}
-	};
-}]);
 angPlayer.directive('showHide', ['$routeParams',  function($routeParams){
 	return{
 		restrict:'A',
@@ -50,7 +36,7 @@ angPlayer.directive('showHide', ['$routeParams',  function($routeParams){
 }]);
 
 	//angular.module('kServices', ['ngResource'])
-angPlayer.factory('dataSource', function($http) {
+angPlayer.factory('dataSource', ['$http', function($http) {
 	return {
 		getData: function() {
 			return $http({
@@ -59,17 +45,16 @@ angPlayer.factory('dataSource', function($http) {
 			});
 		}
 	};
-});
-angPlayer.factory('dataProcessor', function($resource, dataSource, audio, $rootScope, $filter) {
-	// audio.addEventListener('ended', function() {
-	// 		//console.log('ended......');
-	// 		this.current++;
-	// 		this.playNext();
-	// 		$rootScope.$apply();
-	// 	}, false).bind(dataProcessor);
+}]);
 
+angPlayer.factory('audio', [function() {
+			var audio = document.getElementById('player');
+			return audio;
+		}]);
+
+
+angPlayer.factory('dataProcessor', ['dataSource', 'audio', '$rootScope', '$filter', function(dataSource, audio, $rootScope, $filter) {
 	return {
-		// var player = {};
 		data: [],
 		current:0,
 		emptyPlaylist: function(){
@@ -81,10 +66,8 @@ angPlayer.factory('dataProcessor', function($resource, dataSource, audio, $rootS
 			this.data.splice(index, 1);
 			if (index < this.current) {
 				this.current--;
-				console.log('les thn current');
 			}
 			else if(this.current === index) {
-				console.log('already playing...');
 				this.playNext();
 			}
 		},
@@ -95,7 +78,6 @@ angPlayer.factory('dataProcessor', function($resource, dataSource, audio, $rootS
 					this.playNext();
 				}
 			}, this);
-			//console.log('factory lenth',player.data.length);
 			return this.data;
 		},
 		getCollection: function(song) {
@@ -103,24 +85,23 @@ angPlayer.factory('dataProcessor', function($resource, dataSource, audio, $rootS
 			if (!this.data.length) {
 				this.data.push(obj);
 				this.playNext();
-			} else {
+			}
+			else {
 				var inList = $filter('filter')(this.data, {
 					pid: obj.pid
 				});
-				//console.log('inlist',inList);
+
 				if (!inList.length) {
 					this.data.push(obj);
 				}
 			}
 			return this.data;
 		},
-
 		playThis: function(index) {
 			this.current = index;
 			this.playNext();
 		},
 		play: function(mediaSrc) {
-			// console.log('mediasrc',mediaSrc);
 			audio.src = mediaSrc;
 			audio.play();
 		},
@@ -133,11 +114,22 @@ angPlayer.factory('dataProcessor', function($resource, dataSource, audio, $rootS
 			}
 		}
 	};
-});
-angPlayer.factory('audio', function() {
+}]);
+angPlayer.directive('audioPlayer', ['dataProcessor', '$rootScope', function(dataProcessor, $rootScope){
+	return{
+		restrict:'A',
+		link: function(){
 			var audio = document.getElementById('player');
-			return audio;
-		});
+			audio.addEventListener('ended', function() {
+				dataProcessor.current++;
+				dataProcessor.playNext();
+				$rootScope.$apply();
+			}, false);
+		}
+	};
+}]);
+
+
 
 angPlayer.controller('mainController', ['$scope', 'dataSource', '$location',
 	function($scope, dataSource, $location) {
@@ -179,13 +171,11 @@ angPlayer.controller('playListController', ['$scope', 'dataSource', 'dataProcess
 				pid: songId
 			});
 			$scope.songs = dataProcessor.getCollection(song);
-			// console.log('song clollection', $scope.songs);
 		});
 
 		$scope.playAll = function() {
 			var album;
 			dataSource.getData().then(function(res) {
-				//console.log('data', data.records);
 				var albums = res.data.records;
 				if($routeParams.albumId){
 					var clickedAlbum = $filter('filter')(albums, {
@@ -207,7 +197,6 @@ angPlayer.controller('playListController', ['$scope', 'dataSource', 'dataProcess
 		});
 		$scope.playSong = function(index) {
 			dataProcessor.playThis(index);
-			// console.log('index to play song', index);
 		};
 
 		$scope.removeSong = function(index) {
