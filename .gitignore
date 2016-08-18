@@ -11,3 +11,7 @@ js/src
 js/vendors
 sass
 tests/min
+.bowerrc
+.gitignore
+bower.json
+
