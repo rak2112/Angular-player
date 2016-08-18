@@ -9,3 +9,5 @@ dist
 .idea/*
 js/src
 js/vendors
+sass
+tests/min
